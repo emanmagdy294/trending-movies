@@ -1,0 +1,71 @@
+
+<app-homeheader [parentData]='trendingMovies'></app-homeheader>
+<div class=" container">
+  <div class=" row py-5">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2>Trending movies to Watch<br> Right Now</h2>
+        <p class="second-color my-2">most Watched movies by days</p>
+        <div class="brdr w-75 mt-4"></div>
+      </div>
+    </div>
+
+    <div *ngFor='let movie of trendingMovies' class="col-md-2">
+      <div class="movie position-relative my-2">
+      <a [routerLink]='["/moviedetails", movie.id]'>
+        <img class="w-100" [src]="imgPrefix+movie.poster_path" [alt]="movie.title" />
+        <h3 class="my-2 h6">{{movie.title}}</h3>
+        <div class="vote">
+          {{movie.vote_average}}
+        </div>
+      </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" row py-5">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2>Trending Tv to Watch<br> Right Now</h2>
+        <p class="second-color my-2">most Watched Tv by days</p>
+        <div class="brdr w-75 mt-4"></div>
+      </div>
+    </div>
+
+    <div *ngFor='let Tv of trendingTv' class="col-md-2">
+      <div class="movie position-relative my-2">
+        <img class="w-100" [src]="imgPrefix+Tv.poster_path" [alt]="Tv.title" />
+        <h3 class="my-2 h6">{{Tv.title}}</h3>
+
+        <div class="vote">
+          {{Tv.vote_average}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=" row py-5">
+
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-4"></div>
+        <h2>Trending people to Watch<br> Right Now</h2>
+        <p class="second-color my-2">most Watched people by days</p>
+        <div class="brdr w-75 mt-4"></div>
+      </div>
+    </div>
+
+    <div *ngFor='let person of trendingPeople' class="col-md-2">
+      <div class="movie position-relative my-2">
+        <img class="w-100" [src]="imgPrefix+person.profile_path" [alt]="person.name" />
+        <h3 class="my-2 h6">{{person.name}}</h3>
+      </div>
+    </div>
+  </div>
+
+</div>

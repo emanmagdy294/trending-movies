@@ -1,0 +1,37 @@
+<section>
+    <div class="overlay ">
+        <div class=" container col-md-7 form">
+            <div class="margin-auto text-center py-4">
+                <h2 class=" text-center address">
+                    LOG IN
+                </h2>
+            </div>
+            <div class="m-auto bg-register p-5">
+                <div *ngIf='error' class="alert alert-danger">
+                    <p>{{error}}</p>
+                </div>
+                <form [formGroup]='loginForm' (ngSubmit)='submitLoginForm(loginForm)'>
+                    <div class="form-group">
+                        <label for="email"> email</label>
+                        <input formControlName='email' class="form-control" type="email" name="" id="email">
+                        <div *ngIf="loginForm.get('email')?.errors !=null && loginForm.get('email')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="loginForm.get('email')?.errors?.required">email is required</p>
+                            <p *ngIf="loginForm.get('email')?.errors?.email">email is invalid</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"> password</label>
+                        <input formControlName='password' class="form-control" type="password" name="" id="password">
+                        <div *ngIf="loginForm.get('password')?.errors !=null && loginForm.get('password')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="loginForm.get('password')?.errors?.required">password is required</p>
+                            <p *ngIf="loginForm.get('password')?.errors?.pattern">password must start with uppercase...</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-info" type="submit">login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="navBg">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img src="../../assets/camera-1300107_960_720.png" class="photo" />
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <a *ngIf='isLogin' class="nav-link text-white links-hover" routerLink="home">Movies<span
+              class="sr-only">(current)</span></a>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 ">
+                    <a class="nav-link text-white links-hover" *ngIf='isLogin' (click)='isLogout()'> LOG OUT </a>
+                    <a class="nav-link text-white links-hover" *ngIf='!isLogin' routerLinkActive="active" routerLink="Register">Register</a>
+                    <a class="nav-link text-white links-hover" *ngIf='!isLogin ' routerLink="login"> LOG IN </a>
+                    <a class="circle" href="#HOME"> <i class="ico fab fa-twitter m-2"></i></a>
+                    <a class="circle" href="#HOME"> <i class="ico  fab fa-facebook m-2"></i></a>
+                    <a class="circle" href="#HOME"><i class="ico fab fa-instagram m-2"></i></a>
+                    <a class="circle" href="#HOME"> <i class="ico fab fa-skype m-2"></i></a>
+                </form>
+            </div>
+        </nav>
+    </div>
+</section>

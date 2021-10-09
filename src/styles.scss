@@ -1,0 +1,57 @@
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+$bgcolor:#131722;
+$lightBgColor:#24beaf;
+$bgTransparent:rgba(36, 186, 239, .6);
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+* {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+body {
+    background-color: $bgcolor;
+    color: $fontColor;
+}
+
+a {
+    font-size: 18px;
+    color: $fontColor;
+    text-decoration: none;
+}
+
+a:hover {
+    font-size: 18px;
+    color: $fontColor;
+    text-decoration: none;
+}
+
+.brdr {
+    height: 1px;
+    background-color: $borderColor;
+}
+
+.second-color {
+    color: $secondFontColor;
+}
+
+.vote {
+    background-color: $lightBgColor;
+    padding: 5px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.bg-register {
+    background-color: rgba(148, 141, 141, .2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+}

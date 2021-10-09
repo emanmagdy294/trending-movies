@@ -1,0 +1,67 @@
+<section>
+    <div class="overlay ">
+        <div class=" container col-md-7 form">
+            <div class="margin-auto text-center py-4">
+                <h2 class=" text-center address">
+                    REGISTER FORM
+                </h2>
+            </div>
+
+            <div class="m-auto" class="bg-register p-5">
+                <div *ngIf='error' class="alert alert-danger">
+                    <p>{{error}}</p>
+                </div>
+                <form [formGroup]='registerForm' (ngSubmit)='submitRegisterForm(registerForm)'>
+                    <div class="form-group">
+                        <label for="first_name">first_name</label>
+                        <input formControlName='first_name' class="form-control" type="text" name="" id="FirstName">
+                        <div *ngIf="registerForm.get('first_name')?.errors !=null && registerForm.get('first_name')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="registerForm.get('first_name')?.errors?.required">FirstName is required</p>
+                            <p *ngIf="registerForm.get('first_name')?.errors?.minlength">FirstName is minlength</p>
+                            <p *ngIf="registerForm.get('first_name')?.errors?.maxlength">FirstName is maxlength</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last_name"> last_name</label>
+                        <input formControlName='last_name' class="form-control" type="text" name="" id="last_name">
+                        <div *ngIf="registerForm.get('last_name')?.errors !=null && registerForm.get('last_name')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="registerForm.get('last_name')?.errors?.required">lastName is required</p>
+                            <p *ngIf="registerForm.get('last_name')?.errors?.minlength">lastName is minlength</p>
+                            <p *ngIf="registerForm.get('last_name')?.errors?.maxlength">lastName is maxlength</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age"> age</label>
+                        <input formControlName='age' class="form-control" type="number" name="" id="age">
+                        <div *ngIf="registerForm.get('age')?.errors !=null && registerForm.get('age')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="registerForm.get('age')?.errors?.required">age is required</p>
+                            <p *ngIf="registerForm.get('age')?.errors?.min">age is min 16</p>
+                            <p *ngIf="registerForm.get('age')?.errors?.max">age is max 80</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"> email</label>
+                        <input formControlName='email' class="form-control" type="email" name="" id="email">
+                        <div *ngIf="registerForm.get('email')?.errors !=null && registerForm.get('email')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="registerForm.get('email')?.errors?.required">email is required</p>
+                            <p *ngIf="registerForm.get('email')?.errors?.email">email is invalid</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"> password</label>
+                        <input formControlName='password' class="form-control" type="password" name="" id="password">
+                        <div *ngIf="registerForm.get('password')?.errors !=null && registerForm.get('password')?.touched" class="alert alert-danger my-2">
+                            <p *ngIf="registerForm.get('password')?.errors?.required">password is required</p>
+                            <p *ngIf="registerForm.get('password')?.errors?.pattern">password must start with uppercase...</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-info" type="submit">register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
